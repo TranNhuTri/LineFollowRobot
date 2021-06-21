@@ -1,7 +1,6 @@
 #define Sensor_HIGH  300 //High level for optical sensor
 
-int INITIAL_SPEED = 150; // <=255
-#define INITIAL_SONAR_SPEED 150
+int INITIAL_SPEED = 120; // <=255
 
 const int MotorInput[2] = {10, 9};
 const int MotorOutput[2] = {11, 8};
@@ -28,11 +27,6 @@ void setup() {
 
 void loop() {
   GetSensorStatus();
-//  if(HighSignalCount() == 0)
-//  {
-//    stopMotor();
-//    return;
-//  }
   LinePIDFilter();
-  ChangeSpeedMotor();
+  ShiftSpeed(Motor);
 }

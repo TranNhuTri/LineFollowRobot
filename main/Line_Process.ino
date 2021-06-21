@@ -4,10 +4,10 @@ float GetError() { //Get the "error" in the moving direction
     case 0: {
         if (prev_error == 0) {
           return 0;
-        } else if (prev_error== 10 || prev_error== 8) {
+        } else if (prev_error >= 8) {
           prev_error = 8;
           return 8;
-        } else if (prev_error== -10 || prev_error== -8) {
+        } else if (prev_error <= -8) {
           prev_error = -8;
           return -8;
         }
@@ -107,14 +107,14 @@ float GetError() { //Get the "error" in the moving direction
       break;
       }
     case 3: {
-      if ( (Line[0]==1) && (Line[1]==1) && (Line[2]==1)) {prev_error = -10; return -10;}
+      if ( (Line[0]==1) && (Line[1]==1) && (Line[2]==1)) {prev_error = -20; return -10;}
       if ( (Line[1]==1) && (Line[2]==1) && (Line[3]==1)) {prev_error = -8; return -8;}
       if ( (Line[2]==1) && (Line[3]==1) && (Line[4]==1)) {prev_error = -6; return -6;}
       if ( (Line[3]==1) && (Line[4]==1) && (Line[5]==1)) {prev_error = -4; return -4;}
       if ( (Line[4]==1) && (Line[5]==1) && (Line[6]==1)) {prev_error = 4; return 4;}
       if ( (Line[5]==1) && (Line[6]==1) && (Line[7]==1)) {prev_error = 6; return 6;}
       if ( (Line[6]==1) && (Line[7]==1) && (Line[8]==1)) {prev_error = 8; return 8;}
-      if ( (Line[7]==1) && (Line[8]==1) && (Line[9]==1)) {prev_error = 10; return 10;}
+      if ( (Line[7]==1) && (Line[8]==1) && (Line[9]==1)) {prev_error = 20; return 10;}
       return prev_error;
       break;
     }

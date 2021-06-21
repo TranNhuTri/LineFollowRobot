@@ -2,38 +2,37 @@ void ChangeSpeedMotor()
 {
   if(HighSignalCount() == 0)
   {
-//    stopMotor();
   }
   else
   {
-    analogWrite(MotorInput[0], Motor[0]);
-    digitalWrite(MotorOutput[0], LOW);
-    analogWrite(MotorInput[1], Motor[1]);
-    digitalWrite(MotorOutput[1], LOW);
-//    ShiftSpeed(Motor);
+//    analogWrite(MotorInput[0], Motor[0]);
+//    digitalWrite(MotorOutput[0], LOW);
+//    analogWrite(MotorInput[1], Motor[1]);
+//    digitalWrite(MotorOutput[1], LOW);
+    ShiftSpeed(Motor);
   }
 }
 void leftToward()
 {
-  analogWrite(MotorInput[0], 150);
+  analogWrite(MotorInput[0], 100);
   digitalWrite(MotorOutput[0], 0);
 }
 
 void leftBackward()
 {
-  analogWrite(MotorInput[0], 100);
+  analogWrite(MotorInput[0], 150);
   digitalWrite(MotorOutput[0], 1);
 }
 
 void rightToward()
 {
-  analogWrite(MotorInput[1], 150);
+  analogWrite(MotorInput[1], 100);
   digitalWrite(MotorOutput[1], 0);
 }
 
 void rightBackward()
 {
-  analogWrite(MotorInput[1], 100);
+  analogWrite(MotorInput[1], 150);
   digitalWrite(MotorOutput[1], 1);
 }
 
@@ -49,7 +48,11 @@ void stopMotor()
   digitalWrite(11, 1);
   analogWrite(9, 200);
   digitalWrite(8, 1);
-  delay(0.5);
+
+  digitalWrite(10, 0);
+  digitalWrite(11, 0);
+  digitalWrite(9, 0);
+  digitalWrite(8, 0);
 }
 void ShiftSpeed(int *MotorSpeed) { //Shift the speed to the motors
   MotorMapping(MotorSpeed);

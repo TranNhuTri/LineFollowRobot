@@ -1,5 +1,5 @@
 void LinePIDFilter() { //PID control in line tracking mode
-  static double kP = 30, kI = 0.00001, kD = 35;
+  static double kP = 15, kI = 0.000001, kD = 20;
   static double previous_error = 0, prev_I = 0;
   double p = 0, i = 0, d = 0, pid_value;
 

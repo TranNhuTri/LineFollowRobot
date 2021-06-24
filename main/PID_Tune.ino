@@ -10,6 +10,6 @@ void LinePIDFilter() { //PID control in line tracking mode
   pid_value = kP * p + kI * i + kD * d;
   prev_I = i;
   previous_error = p;
-  Motor[0] = constrain(INITIAL_SPEED - pid_value, 0, 255);
-  Motor[1] = constrain(INITIAL_SPEED + pid_value, 0, 255);
+  Motor[0] = INITIAL_SPEED - pid_value;
+  Motor[1] = INITIAL_SPEED + pid_value;
 }

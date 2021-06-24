@@ -61,8 +61,8 @@ void ShiftSpeed(int *MotorSpeed) { //Shift the speed to the motors
       analogWrite(MotorInput[i], MotorSpeed[i]);
       digitalWrite(MotorOutput[i], LOW);
     } else {
-      digitalWrite(MotorInput[i], LOW);
-      analogWrite(MotorOutput[i], -MotorSpeed[i]);
+      analogWrite(MotorInput[i], 200 + MotorSpeed[i]);
+      digitalWrite(MotorOutput[i], 1);
     }
   }
 }
